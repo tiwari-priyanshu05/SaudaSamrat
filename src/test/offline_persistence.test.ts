@@ -45,8 +45,8 @@ describe('Offline Storage & PWA Configuration Verification', () => {
       const parsed = JSON.parse(manifest);
       expect(parsed.name).toBe('SaudaSamrat — Kirana Inventory');
       expect(parsed.short_name).toBe('SaudaSamrat');
-      expect(parsed.theme_color).toBe('#16a34a');
-      expect(parsed.background_color).toBe('#f7f8f5');
+      expect(parsed.theme_color).toBe('#087F5B');
+      expect(parsed.background_color).toBe('#F9F7EF');
       expect(parsed.display).toBe('standalone');
       expect(parsed.start_url).toBe('/');
       expect(parsed.scope).toBe('/');
