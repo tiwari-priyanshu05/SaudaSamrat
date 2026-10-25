@@ -1,0 +1,144 @@
+@import "tailwindcss";
+
+/* =========================================================
+   SaudaSamrat — Modern Indian Retail Design System
+   ========================================================= */
+
+@theme {
+  --color-emerald: #087F5B;
+  --color-forest: #155E46;
+  --color-ivory: #F9F7EF;
+  --color-mint: #DFF5E8;
+  --color-mango: #FFB454;
+  --color-coral: #E86D5A;
+  --color-main-text: #20352C;
+  --color-secondary-text: #6B7C72;
+  --color-subtle-border: #E5EAE3;
+
+  /* Legacy semantic mappings for seamless Tailwind compatibility */
+  --color-primary: #087F5B;
+  --color-primary-dark: #155E46;
+  --color-warm-bg: #F9F7EF;
+  --color-lemon: #FFB454;
+  --color-lemon-light: #FFF8EE;
+
+  --color-coral-light: #FDF2F0;
+  --color-coral-dark: #B53826;
+
+  --color-amber-warm: #E68A00;
+  --color-amber-warm-light: #FFF4E0;
+  --color-amber-warm-dark: #8D5300;
+
+  --color-tile-mint: #DFF5E8;
+  --color-tile-lemon: #FFF8EE;
+  --color-tile-peach: #FDF2F0;
+  --color-tile-sky: #EBF5FA;
+}
+
+:root {
+  --font-sans: 'Inter', 'Noto Sans Devanagari', system-ui, -apple-system, sans-serif;
+  --color-brand: #087F5B;
+  --color-brand-dark: #155E46;
+  --color-brand-mint: #DFF5E8;
+  --color-brand-mango: #FFB454;
+  --color-brand-coral: #E86D5A;
+  --color-bg-page: #F9F7EF;
+  --color-text-main: #20352C;
+  --color-text-sub: #6B7C72;
+  --color-border-subtle: #E5EAE3;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: var(--font-sans);
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+  background-color: #F9F7EF;
+}
+
+body {
+  margin: 0;
+  background-color: #F9F7EF;
+  color: #20352C;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overscroll-behavior: none;
+}
+
+/* iOS safe area support */
+.safe-area-bottom {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.h-safe-bottom {
+  height: env(safe-area-inset-bottom, 0px);
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 4px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 100px;
+}
+
+/* Animate in utility (for toasts) */
+@keyframes slide-in-from-bottom {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-in {
+  animation-fill-mode: both;
+}
+
+.slide-in-from-bottom-4 {
+  animation-name: slide-in-from-bottom;
+}
+
+.duration-300 {
+  animation-duration: 300ms;
+}
+
+/* Focus ring that doesn't look terrible */
+:focus-visible {
+  outline: 2px solid var(--color-brand);
+  outline-offset: 2px;
+}
+
+/* Remove number input spinners */
+input[type='number']::-webkit-inner-spin-button,
+input[type='number']::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+input[type='number'] {
+  -moz-appearance: textfield;
+}
+
+/* Reduced motion preference support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
